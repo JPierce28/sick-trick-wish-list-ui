@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import Tricks from '../Tricks/Tricks'
+import Form from '../Form/Form'
 
 const url = 'http://localhost:3001/api/v1/tricks'
 
@@ -19,10 +20,22 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({isLoaded: true, tricks: [...data]}))
   }
+
+  addTrick = (newTrick) => {
+    let postData = fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(newTrick),
+      headers: {'Content-Type': 'application/json'}
+    })
+    this.setState({ tricks: [...this.state.tricks, postData]})
+    this.componentDidMount()
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        <Form addTrick={this.addTrick}/>
         <Tricks trickList={this.state.tricks}/>
       </div>
     );
