@@ -1,0 +1,9 @@
+.trick-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30vh;
+  width: 30vw;
+  border: solid 3px black;
+  background-color: white;
+}
