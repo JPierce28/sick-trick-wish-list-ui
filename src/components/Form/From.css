@@ -1,6 +1,7 @@
 .form {
   width: 75vw;
   height: 40vh;
-  border: solid 3px black;
-  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
