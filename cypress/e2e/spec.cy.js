@@ -34,7 +34,14 @@ describe('Sick Trick Wish List', () => {
   cy.get('.obstacle-select').contains('Ledge')
   cy.get('.obstacle-select').contains('Pool')
  })
+ it('Should display the current text in the input fields', () => {
+  cy.get('.trick-name').should('have.value', '')
+  //this needs work
+ })
  it('Should have a button on the form to submit a new trick', () => {
   cy.get('.submit-button').contains('SEND IT')
+ })
+ it('Should update state when a user submits a new trick', () => {
+  cy.get('.submit-button').click()
  })
 })

@@ -22,13 +22,7 @@ class App extends Component {
   }
 
   addTrick = (newTrick) => {
-    let postData = fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(newTrick),
-      headers: {'Content-Type': 'application/json'}
-    })
-    this.setState({ tricks: [...this.state.tricks, postData]})
-    this.componentDidMount()
+    this.setState({ tricks: [...this.state.tricks, newTrick]})
   }
 
   render() {

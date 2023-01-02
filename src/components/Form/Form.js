@@ -24,6 +24,7 @@ const Form = (props) => {
           <option value='Switch'>Switch</option>
         </select>
         <input
+        className='trick-name'
         type='text'
         placeholder='Name'
         name='name'
@@ -38,6 +39,7 @@ const Form = (props) => {
           <option value='Pool'>Pool</option>
         </select>
         <input
+        className='tutorial'
         type='text'
         placeholder='Tutorial'
         name='tutorial'
